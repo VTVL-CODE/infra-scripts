@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# This file installs multipass.
+
 if (which multipass > /dev/null)
 then
   echo "multipass already installed"
