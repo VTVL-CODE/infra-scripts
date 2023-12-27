@@ -43,8 +43,7 @@ else
   sudo apt install -y git 
 fi
  
-if (git config --global --get user.email | grep rodas.huerobruce@gmail.com
- > /dev/null)
+if (git config --global --get user.email | grep rodas.huerobruce@gmail.com)
 then 
   echo 'git email is already configured'
 else 
@@ -52,8 +51,7 @@ else
   git config --global user.email "rodas.huerobruce@gmail.com"
 fi 
 
-if (git config --global --get user.name | grep "Huero Rodas"
- > /dev/null)
+if (git config --global --get user.name | grep "Huero Rodas")
 then 
   echo 'git name is already configured'
 else 
