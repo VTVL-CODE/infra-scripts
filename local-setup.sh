@@ -1,10 +1,15 @@
-whoami
-pwd
-hostname
-hostname -I
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y $(apt list --upgradable | tr '/' ' ' | awk '{ print $1 }' | tail -n +2 | tr '\n' ' ')
+#!/bin/bash
+
+# setup local ubuntu enviornment
+
+if [ $(sudo apt update && apt list --upgradable | wc -l) -le 1 ]
+then
+  echo "System already up to date"
+else
+  echo "Upgrading system"
+  sudo apt upgrade -y
+  sudo apt install -y $(apt list --upgradable | tr '/' ' ' | awk '{ print $1 }' | tail -n +2 | tr '\n' ' ')
+fi
 
 if (id -u stephen > /dev/null)
 then
