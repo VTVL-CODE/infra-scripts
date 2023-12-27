@@ -27,6 +27,15 @@ else
   sudo apt install -y curl 
 fi 
 
+if (dpkg -s htop)
+then 
+  echo 'htop is already installed'
+else 
+  echo 'installing htop'
+  sudo apt install -y htop 
+fi 
+
+
 if (which git > /dev/null)
 then 
   echo 'git is already installed'
