@@ -64,4 +64,11 @@ else
   sudo apt install -y openssh-server
 fi
 
-curl http://$(hostname -I | tr -d ' ')
+if (stat $HOME/.ssh/id_ed25519 > /dev/null)
+then
+  echo 'ssh key-pair already exists'
+else
+  echo 'creating ssh key-pair'
+  ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N '' <<< y
+fi
+
