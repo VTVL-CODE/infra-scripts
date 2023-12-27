@@ -19,14 +19,6 @@ else
   sudo useradd -p $(openssl passwd -1 password123) -g sudo -m stephen -s /usr/bin/bash
 fi
 
-if (which nginx > /dev/null)
-then
-  echo 'nginx is already installed'
-else
-  echo 'installing nginx'
-  sudo apt install -y nginx
-fi
-
 if (which curl > /dev/null)
 then 
   echo 'curl is already installed'
@@ -43,8 +35,7 @@ else
   sudo apt install -y git 
 fi
  
-if (git config --global --get user.email | grep rodas.huerobruce@gmail.com
- > /dev/null)
+if (git config --global --get user.email | grep rodas.huerobruce@gmail.com)
 then 
   echo 'git email is already configured'
 else 
@@ -52,8 +43,7 @@ else
   git config --global user.email "rodas.huerobruce@gmail.com"
 fi 
 
-if (git config --global --get user.name | grep "Huero Rodas"
- > /dev/null)
+if (git config --global --get user.name | grep "Huero Rodas")
 then 
   echo 'git name is already configured'
 else 
