@@ -2,7 +2,7 @@
 
 # This file installs multipass.
 
-if (which multipass > /dev/null)
+if (multipass version)
 then
   echo "multipass already installed"
 else
