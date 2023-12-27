@@ -19,14 +19,6 @@ else
   sudo useradd -p $(openssl passwd -1 password123) -g sudo -m stephen -s /usr/bin/bash
 fi
 
-if (which nginx > /dev/null)
-then
-  echo 'nginx is already installed'
-else
-  echo 'installing nginx'
-  sudo apt install -y nginx
-fi
-
 if (which curl > /dev/null)
 then 
   echo 'curl is already installed'
