@@ -9,6 +9,7 @@ else
 }
 
 Install-PackageProvider -Name NuGet -Force 
+dotnet add package NuGet.CommandLine --version 6.8.0 
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 Add-PoshGitToProfile -AllHosts
 
