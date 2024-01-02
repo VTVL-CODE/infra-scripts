@@ -17,3 +17,6 @@ else
     write-host "installing code"
     winget install -e --id Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements
 }
+
+git config --global user.email "rodas.huerobruce@gmail.com"
+git config --global user.name "Huero Bruce Rodas"
