@@ -8,6 +8,10 @@ else
     winget install -e --id Git.Git --accept-source-agreements --accept-package-agreements
 }
 
+Install-PackageProvider -Name NuGet -Force 
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
+Add-PoshGitToProfile -AllHosts
+
 if (Get-Command code)
 {
     write-host "code already installed"
