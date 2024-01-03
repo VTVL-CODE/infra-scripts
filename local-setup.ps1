@@ -23,5 +23,21 @@ else
     winget install -e --id Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements
 }
 
-git config --global user.email "rodas.huerobruce@gmail.com"
-git config --global user.name "Huero Bruce Rodas"
+if (git config --global user.email -Pattern "rodas.huerobruce@gmail.com")
+{   
+    write-host "git email already configurated"
+}
+else
+{   
+    write-host "configuring git email"
+    git config --global user.email "rodas.huerobruce@gmail.com"
+}
+
+if (git config --global user.name -Pattern "Huero Bruce Rodas")
+{   
+    write-host "git name is already configured"
+}
+else
+{   write-host "configuring git name"
+    git config --global user.name "Huero Bruce Rodas"
+}
