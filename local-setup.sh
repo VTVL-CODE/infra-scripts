@@ -76,3 +76,26 @@ else
   ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N '' <<< y
 fi
 
+if (snap version)
+then
+  echo "snap already installed"
+else
+  echo "installing snap"
+  sudo apt install snapd -y
+fi
+
+if (code -v) 
+then
+  echo "vs code already installed"
+else
+  echo "installing vs code"
+  sudo snap install --classic code
+fi
+
+if (which discord)
+then
+  echo "discord is already installed"
+else
+  echo "installing discord"
+  sudo apt install discord -y
+fi
