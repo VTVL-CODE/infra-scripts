@@ -99,3 +99,19 @@ else
   echo "installing discord"
   sudo apt install discord -y
 fi
+
+if (gh --version)
+then
+  echo "gh already installed"
+else
+  echo "installing gh"
+  sudo apt install -y gh
+fi
+
+if (gh auth status)
+then
+  echo "gh already authenticated"
+else
+  echo "authenticating gh"
+  gh auth login
+fi
